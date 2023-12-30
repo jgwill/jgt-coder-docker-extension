@@ -4,15 +4,29 @@ services:
   coder-docker-extension:
     image: ${DESKTOP_PLUGIN_IMAGE}
   coder:
-    image: codercom/code-server:4.19.0
-    command: --auth none --verbose --app-name VS Code Web Docker Desktop Extension
+    #image: codercom/code-server:4.19.0
+    image: jgwill/jgt:code-server
+    command: --auth none --verbose --app-name JGT VS Code Web Docker Desktop Extension
     container_name: coder_embedded_dd_vm
     restart: unless-stopped
     volumes:
       - coder_data:/home/coder
       - /var/run/docker.sock.raw:/var/run/docker.sock
+      #
+      - ${JGTROOT_DIR-/c/usr/src/_jgt}:/home/coder/_jgt
+      - ${JGTROOT_DIR-/c/usr/src/_jgt/data}:/home/coder/data
+      #- ${DOTJUPYTER_FILE-/c/usr/src/_jgt/data/lab/.jupyter}:/home/coder/.jupyter
+      #- ${DOTIPYTHON_FILE-/c/usr/src/_jgt/data/lab/.python}:/home/coder/.ipython
+      #- ${DOTCONFIG_FILE-/c/usr/src/_jgt/data/lab/.config}:/home/coder/.config
+      - /c/usr/src/_jgt/x_notebooklab_231208:/home/coder/x_notebooklab_231208
+      - ${DLROOT_DIR-/c/Users/jeang/Downloads}:/home/coder/Downloads
+      - ${JGTCNF_FILE-/c/Users/jeang/config.json}:/home/coder/config.json
+      - ${DOTENV_FILE-/c/Users/jeang/.env}:/home/coder/.env
+      #- ${USERROOT_DIR-/c/Users/jeang/.ssh}:/home/coder/.ssh
+      - ${JGTDROOT_DIR-/b/Dropbox/jgt}:/home/coder/jgtd
+      - /c/usr/src/_jgt/lib/jgt-coder-docker-extension:/home/coder/work
     environment:
-      TZ: America/Argentina/Buenos_Aires
+      TZ: America/New_York
     ports:
       - 57080:8080
 volumes:

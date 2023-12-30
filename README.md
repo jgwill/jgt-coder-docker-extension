@@ -1,4 +1,4 @@
-# VS Code Web Docker Extension
+# JGT VS Code Web Docker Extension
 
 VS Code Web extension for Docker Desktop
 
@@ -11,11 +11,11 @@ Since Docker Desktop [v4.11.0](https://docs.docker.com/desktop/release-notes/#do
 If you are using Docker Desktop [v4.10.1](https://docs.docker.com/desktop/release-notes/#docker-desktop-4101) or less  you can install just by executing:
 
 ```bash
-$ docker extension install mochoa/coder-docker-extension:4.19.0
+$ docker extension install jgwill/jgt-coder-docker-extension:4.19.0
 Extensions can install binaries, invoke commands and access files on your machine.
 Are you sure you want to continue? [y/N] y
-Image not available locally, pulling mochoa/coder-docker-extension:4.19.0...
-Installing new extension "mochoa/coder-docker-extension:4.19.0"
+Image not available locally, pulling jgwill/jgt-coder-docker-extension:4.19.0...
+Installing new extension "jgwill/jgt-coder-docker-extension:4.19.0"
 Installing service in Desktop VM...
 Setting additional compose attributes
 VM service started
@@ -38,26 +38,26 @@ If want to run/debug NodeJS code a node command must be installed prior you chec
 To simplify that an script is provided as post installation step, here an example of using them:
 
 ```bash
-docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/coder-docker-extension/main/addNodeJS.sh | bash"
+docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-coder-docker-extension/main/addNodeJS.sh | bash"
 ```
 
 Other run time extensions:
 
 ```bash
-docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/coder-docker-extension/main/addDocker.sh | bash"
+docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-coder-docker-extension/main/addDocker.sh | bash"
 ```
 
 ```bash
-docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/coder-docker-extension/main/addJava.sh | bash"
+docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-coder-docker-extension/main/addJava.sh | bash"
 ```
 
 ```bash
-docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/coder-docker-extension/main/addPython.sh | bash"
+docker exec -ti --user root coder_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-coder-docker-extension/main/addPython.sh | bash"
 ```
 
 Note 1: that if you upgrade VS Code Web Docker Desktop Extension above post installations steps must be re-done.
 
-Note 2: If you add Docker Client/Extension support [addDocker.sh](https://raw.githubusercontent.com/marcelo-ochoa/coder-docker-extension/main/addDocker.sh) coder_embedded_dd_vm need to be restarted, execute:
+Note 2: If you add Docker Client/Extension support [addDocker.sh](https://raw.githubusercontent.com/jgwill/jgt-coder-docker-extension/main/addDocker.sh) coder_embedded_dd_vm need to be restarted, execute:
 
 ```bash
 $ docker restart coder_embedded_dd_vm
@@ -77,10 +77,10 @@ If your Docker Desktop is running in Dark Mode, first execution of VS Code Web w
 To uninstall the extension just execute:
 
 ```bash
-$ docker extension uninstall mochoa/coder-docker-extension:4.19.0
+$ docker extension uninstall jgwill/jgt-coder-docker-extension:4.19.0
 Extension "VS Code Web" uninstalled successfully
 ```
 
 ## Sources
 
-As usual the code of this extension is at [GitHub](https://github.com/marcelo-ochoa/coder-docker-extension), feel free to suggest changes and make contributions, note that I am a beginner developer of React and TypeScript so contributions to make this UI better are welcome.
+As usual the code of this extension is at [GitHub](https://github.com/jgwill/jgt-coder-docker-extension), feel free to suggest changes and make contributions, note that I am a beginner developer of React and TypeScript so contributions to make this UI better are welcome.
