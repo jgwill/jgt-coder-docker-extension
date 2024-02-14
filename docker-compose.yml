@@ -13,18 +13,20 @@ services:
       - coder_data:/home/coder
       - /var/run/docker.sock:/var/run/docker.sock
       #
-      - ${JGTROOT_DIR-/media/jgi/ked/src/_jgt}:/home/coder/_jgt
-      - ${JGTROOT_DIR-/media/jgi/ked/src/_jgt/data}:/home/coder/data
-      #- ${DOTJUPYTER_FILE-/c/usr/media/jgi/ked/src/_jgt/data/lab/.jupyter}:/home/coder/.jupyter
-      #- ${DOTIPYTHON_FILE-/c/usr/media/jgi/ked/src/_jgt/data/lab/.python}:/home/coder/.ipython
-      #- ${DOTCONFIG_FILE-/c/usr/media/jgi/ked/src/_jgt/data/lab/.config}:/home/coder/.config
-      - /media/jgi/ked/src/_jgt/x_notebooklab_231208:/home/coder/x_notebooklab_231208
+      - ${JGTROOT_DIR-/a/src/_jgt}:/home/coder/_jgt
+      - ${JGTROOT_DIR-/a/src/_jgt/data}:/home/coder/data
+      #- ${DOTJUPYTER_FILE-/c/usr/a/src/_jgt/data/lab/.jupyter}:/home/coder/.jupyter
+      #- ${DOTIPYTHON_FILE-/c/usr/a/src/_jgt/data/lab/.python}:/home/coder/.ipython
+      #- ${DOTCONFIG_FILE-/c/usr/a/src/_jgt/data/lab/.config}:/home/coder/.config
+      - /a/src/_jgt/x_notebooklab_231208:/home/coder/x_notebooklab_231208
       - ${DLROOT_DIR-/home/jgi/Downloads}:/home/coder/Downloads
       - ${JGTCNF_FILE-/home/jgi/config.json}:/home/coder/config.json
       - ${DOTENV_FILE-/home/jgi/.env}:/home/coder/.env
       #- ${USERROOT_DIR-/c/Users/jeang/.ssh}:/home/coder/.ssh
-      - ${JGTDROOT_DIR-/home/jgi/Dropbox/jgt}:/home/coder/jgtd
-      - /media/jgi/ked/src/_jgt/lib/jgt-coder-docker-extension:/home/coder/work
+      - ${JGTDROOT_DIR-/b/Dropbox/jgt}:/home/coder/jgtd
+      - ${JGTDROOT_DIR-/b/Dropbox/jgt/edu}:/home/coder/edu
+      - ${JGTDROOT_DIR-/b/Dropbox/jgt/drop}:/home/coder/drop
+      - /a/src/_jgt/lab/jgt-coder-docker-extension:/home/coder/work
     environment:
       TZ: America/New_York
     ports:
